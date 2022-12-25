@@ -1,0 +1,123 @@
+:root {
+    --background-color: hsl(30, 38%, 92%);
+    --preheader-color: hsl(228, 12%, 48%);
+    --container-color: hsl(0, 0%, 100%);
+    --primary-color: hsl(158, 36%, 37%);
+    --neutral-color: hsl(212, 21%, 14%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+}
+
+.pp-container {
+    background-color: var(--container-color);
+    border-radius: .5rem;
+    width: 90%;
+    max-width: 550px;   
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+}
+
+.pp-image {
+    height: 100%;
+}
+
+.pp-image > img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: .5rem 0 0 .5rem;
+}
+
+@media (max-width: 375px) {
+    .pp-container {
+        flex-direction: column;
+        height: auto;
+        max-height: 640px;
+        width: 90%;
+    }
+
+    .pp-image {
+        height: 300px;
+        width: 100%;   
+    }
+
+    .pp-image > img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: .5rem .5rem 0 0;
+    }
+}
+
+.pp-content {
+    padding: 30px;
+}
+
+.pp-preheading {
+    color: var(--preheader-color);
+    font-family: Montserrat, sans-serif;
+    text-transform:uppercase;
+    font-size: 10px;
+    letter-spacing: .3rem;
+    padding-bottom: 12px;
+}
+
+.pp-heading {
+    font-family: Fraunces, 'Times New Roman', Times, serif;
+    color: var(--neutral-color);
+    padding-bottom: 12px;
+}
+
+.pp-description {
+    font-size: 14px;
+    font-family: Montserrat, sans-serif;
+    color: var(--preheader-color);
+    padding-bottom: 15px;
+}
+
+.pp-price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    font-family: Fraunces, 'Times New Roman', Times, serif;
+    padding-bottom: 20px;
+}
+
+.pp-price .discount {
+    font-weight: 1000;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.pp-price .normal {
+    text-decoration:line-through;
+    color: var(--preheader-color);
+}
+
+.pp-confirm * {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--container-color);
+    font-family: Montserrat, sans-serif;
+    padding: 13px 0;
+    border-radius: .5rem;
+    font-weight: 700;
+}
